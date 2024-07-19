@@ -16,5 +16,8 @@ $ cd IP-Trace
 5
 $ chmod +x IP-Trace.sh
 
-6 
+6
+$ dos2unix IP-Trace.sh
+
+7
 $ bash IP-Trace.sh "IP Address"
