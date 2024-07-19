@@ -12,21 +12,25 @@ IP_ADDRESS=$1
 # Check if curl is installed
 if ! command -v curl &> /dev/null; then
   echo "Error: curl is not installed. Please install curl."
+  echo "To install curl sudo 'apt-get install curl'"
   exit 1
 fi
 
 # Check if jq is installed
 if ! command -v jq &> /dev/null; then
   echo "Error: jq is not installed. Please install jq."
+  echo "To install curl sudo 'apt-get install jq'"
   exit 1
 fi
 
-# Fetch IP information using ip-api.com
+
 response=$(curl -s "http://ip-api.com/json/${IP_ADDRESS}")
 
 # Check if the response contains an error
+# Response error or it will continue the script
 if echo "$response" | jq -e '.status' | grep -q 'fail'; then
   echo "Error: Invalid IP address or unable to fetch information."
+  echo "Please check IP address and try again !"
   exit 1
 fi
 
