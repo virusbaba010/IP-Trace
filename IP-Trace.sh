@@ -28,6 +28,6 @@ echo "Country: $(echo $response | jq -r '.country')"
 echo "Location: $(echo $response | jq -r '.loc')"
 echo "Organization: $(echo $response | jq -r '.org')"
 echo "Timezone: $(echo $response | jq -r '.timezone')"
-echo "Address: $(echo $response | j1 -r '.address')"
+
 
 exit 0
