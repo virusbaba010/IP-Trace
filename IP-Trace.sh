@@ -42,6 +42,7 @@ echo "Country: $(echo "$response" | jq -r '.country')"
 echo "Location: $(echo "$response" | jq -r '.lat'), $(echo "$response" | jq -r '.lon')"
 echo "Organization: $(echo "$response" | jq -r '.org')"
 echo "Timezone: $(echo "$response" | jq -r '.timezone')"
-echo "Address: $(echo "$response" | jq -r '.city'), $(echo "$response" | jq -r '.regionName'), $(echo "$response" | jq -r '.country')"
+echo "Address: $(echo "$response" | jq -r '.address')"
+echo "Name: $(echo "$response" | jq -r '.name')"
 
 exit 0
